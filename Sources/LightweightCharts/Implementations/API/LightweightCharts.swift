@@ -50,7 +50,7 @@ public class LightweightCharts: UIView {
         let optionsScript = options.optionsScript(for: promptHandler)
         let script = """
         \(optionsScript.options)
-        var \(chart.jsName) = LightweightCharts.createChart(document.body, \(optionsScript.variableName));
+        var \(chart.jsName) = window.LightweightCharts.createChart(document.body, \(optionsScript.variableName));
         var seriesArray = [];
         """
         webView.evaluateScript(script) { [weak self] (_, error) in
